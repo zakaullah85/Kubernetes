@@ -23,7 +23,9 @@ Next, Open the /etc/fstab file with a text editor.
 sudo nano /etc/fstab
 ```
 Look for the line that references the swap file. It will usually look something like this:
+
 > /swapfile none swap sw 0 0
+
 Either comment the file by putting \#\ at the begining of the line or delete the entire line.
 Finally, reboot your system to make the changes take place by running the following command:
 ```bash
