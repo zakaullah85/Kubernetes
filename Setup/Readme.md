@@ -26,7 +26,7 @@ Look for the line that references the swap file. It will usually look something 
 
 > /swapfile none swap sw 0 0
 
-Either comment the file by putting \#\ at the begining of the line or delete the entire line.
+Either comment the file by putting \# at the begining of the line or delete the entire line.
 Finally, reboot your system to make the changes take place by running the following command:
 ```bash
 sudo reboot
