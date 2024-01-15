@@ -13,8 +13,19 @@ Before you begin, ensure that you have the following:
 * Root or sudo access to all machines.
 
 This guide assumes to use Ubuntu Server 22.x.x. 
-## Setup 1
-Disable swap on each node master and worker node.
+## Setup 1: 
+Disable swap on each node master and worker node by running the following command in terminal.
 ```bash
 sudo swapoff -a
+```
+Next, Open the /etc/fstab file with a text editor.
+```bash
+sudo nano /etc/fstab
+```
+Look for the line that references the swap file. It will usually look something like this:
+> /swapfile none swap sw 0 0
+Either comment the file by putting \#\ at the begining of the line or delete the entire line.
+Finally, reboot your system to make the changes take place by running the following command:
+```bash
+sudo reboot
 ```
