@@ -31,7 +31,7 @@ Finally, reboot your system to make the changes take place by running the follow
 ```bash
 sudo reboot
 ```
-##Step 2:
+## Step 2:
 Next you can give some human readable names to your nodes. for example, you can name the master node as "master-node" and the worker nodes as "worker-node1" and "woker-node2". Run the following command with the desired name on each node of the cluster to assign.
 
 ```bash
@@ -40,7 +40,7 @@ exec bash
 ````
 Execute identical commands on the remaining nodes within this Kubernetes cluster, adjusting the hostname as needed. As an illustration, on a worker node, execute the command sudo hostnamectl set-hostname "worker-node1".
 
-##Step 3:
+## Step 3:
 Set up the IPV4 bridge on all nodes.To configure the IPV4 bridge on all nodes, run the subsequent command on each node.
 
 ```bash
@@ -63,7 +63,7 @@ EOF
 sudo sysctl --system
 ```
 
-##Step 4:
+## Step 4:
 Install kubelet, kubeadm, kubectl, docker on each node by running the subsequent commands:
 
 ```bash
@@ -83,9 +83,14 @@ sudo systemctl restart kubelet.service
 sudo systemctl enable kubelet.service
 ```
 
-##Step 5:
-Initiaze the kubernetes cluster on the master node only by running the following command:
+## Step 5:
+Initiaze the kubernetes cluster on the master node only by running the following command. It will install several images neccessary to orchestrate a cluster.
 
 ```bash
 sudo kubeadm config images pull
+```
+Next initialize a cluster by running the following command.
+
+```bash
+
 ```
