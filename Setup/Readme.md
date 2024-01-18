@@ -1,4 +1,4 @@
-# Kubernetes Multi-Note Setup using Kubeadm on x86/x64/arm64
+# Kubernetes Multi-Node Cluster Setup using Kubeadm on x86/x64/arm64
 
 This guide will walk you through setting up a multi-node Kubernetes cluster using kubeadm. The setup is suitable for x86, x64, or arm64 architectures.
 
