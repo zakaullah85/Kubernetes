@@ -84,20 +84,20 @@ sudo systemctl enable kubelet.service
 ```
 These commands are used to set up and install Kubernetes components on a Linux system, particularly Ubuntu. Let's break down each step:
 
-1. sudo apt-get update: Updates the local package database with the latest information about available packages.
-2. sudo apt-get install -y apt-transport-https ca-certificates curl: Installs necessary packages for secure communication and downloading packages over HTTPS.
-3. sudo mkdir /etc/apt/keyrings: Creates a directory to store keyring files for package verification.
-4. curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg: Retrieves the GPG key for the Kubernetes packages, converts it to the keyring format, and saves it in the specified directory.
-5. echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list: Adds the Kubernetes repository to the package manager's sources list.
-6. sudo apt-get update: Updates the package database again to include the newly added Kubernetes repository.
-7. sudo apt install -y kubelet kubeadm kubectl: Installs the Kubernetes components, namely kubelet, kubeadm, and kubectl.
-8. sudo apt install docker.io: Installs the Docker container runtime.
-9. sudo mkdir /etc/containerd: Creates a directory for the containerd
-10. sudo sh -c "containerd config default > /etc/containerd/config.toml": Generates a default containerd configuration file.
-11. sudo sed -i 's/ SystemdCgroup = false/ SystemdCgroup = true/' /etc/containerd/config.toml: Modifies the containerd configuration to enable systemd cgroups.
-12. sudo systemctl restart containerd.service: Restarts the containerd service to apply the new configuration.
-13. sudo systemctl restart kubelet.service: Restarts the kubelet service after installing Kubernetes components.
-14. sudo systemctl enable kubelet.service: Enables the kubelet service to start automatically on system boot.
+1. **sudo apt-get update:** Updates the local package database with the latest information about available packages.
+2. **sudo apt-get install -y apt-transport-https ca-certificates curl:** Installs necessary packages for secure communication and downloading packages over HTTPS.
+3. **sudo mkdir /etc/apt/keyrings:** Creates a directory to store keyring files for package verification.
+4. **curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg:** Retrieves the GPG key for the Kubernetes packages, converts it to the keyring format, and saves it in the specified directory.
+5. **echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list:** Adds the Kubernetes repository to the package manager's sources list.
+6. **sudo apt-get update:** Updates the package database again to include the newly added Kubernetes repository.
+7. **sudo apt install -y kubelet kubeadm kubectl:** Installs the Kubernetes components, namely kubelet, kubeadm, and kubectl.
+8. **sudo apt install docker.io:** Installs the Docker container runtime.
+9. **sudo mkdir /etc/containerd:** Creates a directory for the containerd
+10. **sudo sh -c "containerd config default > /etc/containerd/config.toml":** Generates a default containerd configuration file.
+11. **sudo sed -i 's/ SystemdCgroup = false/ SystemdCgroup = true/' /etc/containerd/config.toml:** Modifies the containerd configuration to enable systemd cgroups.
+12. **sudo systemctl restart containerd.service:** Restarts the containerd service to apply the new configuration.
+13. **sudo systemctl restart kubelet.service:** Restarts the kubelet service after installing Kubernetes components.
+14. **sudo systemctl enable kubelet.service:** Enables the kubelet service to start automatically on system boot.
 
 These commands collectively set up the required environment, install Kubernetes components, configure the container runtime, and ensure that the necessary services are running and configured properly for a Kubernetes cluster.
 
